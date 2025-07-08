@@ -1,0 +1,591 @@
+/* --- Import Font dari Google Fonts (KOMBINASI BARU) --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@400;700&display=swap');
+
+/* --- Variabel Warna & Font (FONT BARU) --- */
+:root {
+    --primary-color: #2E7D32; /* Hijau Tua */
+    --secondary-color: #FFC107; /* Kuning/Emas */
+    --accent-color: #D84315; /* Oranye Tua */
+    --bg-light: #F1F8E9; /* Latar Belakang Hijau Muda */
+    --text-dark: #333;
+    --text-light: #555;
+    --white-color: #ffffff;
+    --border-color: #ddd;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    /* INI BAGIAN YANG DIUBAH */
+    --font-heading: 'Oswald', sans-serif; /* Font untuk judul */
+    --font-body: 'Montserrat', sans-serif; /* Font untuk teks biasa */
+}
+
+/* --- (Sisa kode CSS lainnya tetap sama persis seperti sebelumnya) --- 
+*/
+
+/* --- Pengaturan Dasar & Reset --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body); /* Otomatis menerapkan font Montserrat */
+    color: var(--text-dark);
+    line-height: 1.7;
+    background: var(--white-color);
+}
+
+/* ... dan seterusnya ... */
+
+h1, h2, h3 {
+    font-family: var(--font-heading); /* Otomatis menerapkan font Oswald */
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+
+/* --- Pengaturan Dasar & Reset --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    line-height: 1.7;
+    background: var(--white-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- Navbar --- */
+.navbar {
+    background: var(--white-color);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--text-dark);
+    padding: 0.5rem 0;
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Tombol Utama (Call to Action) --- */
+.cta-button, .cta-button-small {
+    background: var(--secondary-color);
+    color: var(--text-dark);
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.cta-button:hover {
+    background: #FFB300;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+.cta-button-small {
+    background: var(--accent-color);
+    color: var(--white-color);
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+}
+.cta-button-small:hover {
+    background: #BF360C;
+}
+
+/* --- Hero Section (Halaman Utama) --- */
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    color: var(--white-color);
+    text-align: center;
+    padding: 7rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+.hero-section .container {
+    max-width: 800px;
+}
+.hero-section h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: var(--white-color);
+    margin-bottom: 1rem;
+}
+.hero-section p {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
+
+/* --- Section Umum --- */
+.content-section {
+    padding: 5rem 0;
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.section-title span {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.section-title h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-top: 0.5rem;
+}
+
+/* --- Fitur Grid (Halaman Utama) --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+.feature-card {
+    background: var(--white-color);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    border-bottom: 5px solid var(--secondary-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: var(--shadow);
+}
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+.feature-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+/* --- Testimonial (Halaman Utama) --- */
+.testimonial-section {
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 5rem 0;
+}
+.testimonial-section .section-title h2 {
+    color: var(--white-color);
+}
+blockquote {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+blockquote p {
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.5;
+}
+blockquote footer {
+    margin-top: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    font-style: normal;
+}
+
+/* --- Header Halaman (Layanan, Tentang, Kontak) --- */
+.page-header {
+    background: var(--bg-light);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 4rem 0;
+}
+.page-header h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+}
+.page-header p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 1rem auto 0;
+}
+
+/* --- Halaman Produk --- */
+.service-list .service-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+.service-list .service-item.reverse {
+    flex-direction: row-reverse;
+}
+.service-content {
+    flex: 1 1 400px;
+}
+.service-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.service-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.service-content li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+.service-content li::before {
+    content: '✓';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+.service-image {
+    flex: 1 1 400px;
+}
+.service-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+/* --- Halaman Tentang --- */
+.bg-light { background-color: var(--bg-light); }
+.text-center { text-align: center; }
+.mission-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+.team-grid {
+    text-align: center;
+}
+.team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+.team-member p {
+    color: var(--text-light);
+    font-weight: bold;
+}
+.about-story {
+    max-width: 800px;
+    margin: 3rem auto 0;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* --- Halaman Kontak --- */
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+.contact-info {
+    flex: 1 1 300px;
+    background-color: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+}
+.contact-info h3 {
+    margin-bottom: 1.5rem;
+}
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.contact-info-item i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-top: 5px;
+}
+.contact-form {
+    flex: 2 1 500px;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
+}
+.contact-form button {
+    width: 100%;
+}
+
+/* --- Footer --- */
+.main-footer {
+    background: var(--text-dark);
+    color: var(--white-color);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+/* --- Tombol Scroll to Top --- */
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s, transform 0.3s;
+}
+#scrollTopBtn:hover {
+    background-color: #FFB300;
+    transform: scale(1.1);
+}
+
+/* --- Media Queries untuk Responsif --- */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px; /* Sesuaikan dengan tinggi navbar */
+        flex-direction: column;
+        background-color: var(--white-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: var(--shadow);
+        gap: 0;
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+    .nav-link {
+        padding: 1.5rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .nav-link:hover::after, .nav-link.active::after {
+        width: 0; /* Matikan efek garis bawah di mobile */
+    }
+    .hamburger {
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .service-list .service-item, .service-list .service-item.reverse {
+        flex-direction: column;
+    }
+}
+/* --- Tambahan CSS untuk Halaman Tentang Kami --- */
+
+/* Gaya untuk Seksi Visi & Misi */
+.vision-mission-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    text-align: center;
+}
+.vision-mission-item i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+.vision-mission-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Gaya untuk Seksi Nilai-Nilai Kami */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.value-card {
+    background-color: var(--white-color);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-top: 5px solid var(--primary-color);
+}
+.value-card i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+.value-card h4 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+/* Gaya untuk Seksi Cerita & Tim */
+.story-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+}
+.story-image {
+    flex: 1 1 400px;
+}
+.story-image img {
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+.story-content {
+    flex: 1 1 500px;
+}
+.story-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+.story-content p {
+    margin-bottom: 1rem;
+}
+.founder-profile {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--bg-light);
+}
+.founder-profile h4 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+}
+.founder-profile p {
+    color: var(--accent-color);
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Penyesuaian untuk layar kecil */
+@media (max-width: 768px) {
+    .vision-mission-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
